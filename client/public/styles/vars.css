@@ -1,0 +1,10 @@
+:root {
+    --background: #c4c4c4;
+    --white: #FFFFFF;
+    --black: #000000;
+    --primary: #623307;
+    --size-letter: 1rem;
+}
+html {
+    font-size: 16px;
+}

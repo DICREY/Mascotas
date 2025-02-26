@@ -1,0 +1,15 @@
+Dep Client {
+    axios
+    react
+    react-dom
+    react-scripts
+    sweetalert2
+    Dev Dep {
+        vite
+    }
+}
+Dep Server {
+    cors
+    express
+    mysql
+}

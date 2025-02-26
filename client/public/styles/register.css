@@ -1,0 +1,63 @@
+@import url("vars.css");
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--primary);
+}
+::selection {
+    outline: none;
+}
+body {
+    display: flex;
+    place-content: center;
+    place-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: var(--background);
+}
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    gap: 8px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.25);
+    background: var(--white);
+    font-size: var(--size-letter);
+}
+form h1 {
+    text-align: center;
+    color: var(--primary);
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.288);
+    width: 100%;
+}
+form input,select {
+    padding: 4px 6px;
+    width: 100%;
+}
+.card-btns {
+    display: flex;
+    place-content: center;
+    padding: 5px;
+    width: 100%;
+}
+.card-btns button {
+    cursor: pointer;
+    padding: 6px 8px;
+    color: var(--white);
+    font-weight: bold;
+    font-size: var(--size-letter);
+    border: none;
+    border-radius: 5px;
+    background: var(--primary);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.377);
+}
+@media (600px < width) {
+    form {
+        width: 400px;
+    }
+}
