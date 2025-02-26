@@ -1,14 +1,14 @@
-Dep Client {
+Dependencies Client {
     axios
     react
     react-dom
     react-scripts
     sweetalert2
-    Dev Dep {
+    Dev Dependencies {
         vite
     }
 }
-Dep Server {
+Dependencies Server {
     cors
     express
     mysql
