@@ -20,7 +20,7 @@ const RegisterModule = () => {
             imageHeight: 200,
             imageAlt: "Custom image",
             timer: 4000,
-            theme: 'dark',
+            theme: "dark",
             showConfirmButton: false
         })
         sendData(data)
@@ -33,7 +33,7 @@ const RegisterModule = () => {
                         text: "Te registraste exitosamente",
                         icon: "success",
                         timer: 5000,
-                        theme: 'dark',
+                        theme: "dark",
                         imageUrl: "https://github.com/DICREY/Multimedia-Mascotas/blob/main/imgs/201.jpg?raw=true",
                         imageWidth: 220,
                         imageHeight: 200,
@@ -43,8 +43,8 @@ const RegisterModule = () => {
                 .catch((err) => {
                     Swal.fire({
                         title: "Oops...",
-                        theme: 'dark',
-                        icon: 'error',
+                        theme: "dark",
+                        icon: "error",
                         text: JSON.parse(JSON.stringify(err)).message === "Network Error" ? "Intente mas tarde" : JSON.parse(JSON.stringify(err)).message,
                         timer: 5000
                     })
@@ -60,59 +60,100 @@ const RegisterModule = () => {
                 <input 
                     placeholder="Nombre" 
                     type="text" 
-                    {...register("nom", { required: true })} 
+                    {...register("nom", { 
+                        required: {
+                            value: true,
+                            message: "Este campo es requerido"
+                        },
+                        minLength:{
+                            value: 3,
+                            message: "Debe contener 3 letras como minimo"
+                        },
+                        maxLength: {
+                            value: 40,
+                            message: "No debe tener mas de 40"
+                        }
+                    })} 
                 />
-                {errors.nom && <p>Este campo es requerido</p>}
+            {errors.nom && <p color="red"><strong>{errors.nom.message}</strong></p>}
             </span>
             <span>
                 <p>Apellido</p>
                 <input 
                     placeholder="Apellido" 
                     type="text" 
-                    {...register("ape", { required: true })} 
+                    {...register("ape", { required: {
+                        value: true,
+                        message: "Este campo es requerido"
+                        },
+                        minLength:{
+                            value: 3,
+                            message: "Debe contener 3 letras como minimo"
+                        },
+                        maxLength: {
+                            value: 40,
+                            message: "No debe tener mas de 40"
+                        }
+                    })} 
                 />
-                {errors.ape && <p>Este campo es requerido</p>}
+                {errors.ape && <p color="red"><strong>{errors.ape.message}</strong></p>}
             </span>
             <span>
                 <p>Email</p>
                 <input 
                     placeholder="Email" 
                     type="email" 
-                    {...register("email", { required: true })} 
+                    {...register("email", { required: {
+                        value: true,
+                        message: "Este campo es requerido"
+                    }
+                     })} 
                 />
-                {errors.email && <p>Este campo es requerido</p>}
+                {errors.email && <p color="red"><strong>{errors.email.message}</strong></p>}
             </span>
             <span>
                 <p>Contraseña</p>
                 <input 
                     placeholder="Contraseña" 
                     type="password" 
-                    {...register("cont", { required: true })} 
+                    {...register("cont", { required: {
+                        value: true,
+                        message: "Este campo es requerido"
+                    } })} 
                 />
-                {errors.cont && <p>Este campo es requerido</p>}
+                {errors.cont && <p color="red"><strong>{errors.cont.message}</strong></p>}
             </span>
             <span>
                 <p>Celular</p>
                 <input 
                     placeholder="Celular" 
                     type="tel" 
-                    {...register("tel", { required: true })} 
+                    {...register("tel", { required: {
+                        value: true,
+                        message: "Este campo es requerido"
+                    } })} 
                 />
-                {errors.tel && <p>Este campo es requerido</p>}
+                {errors.tel && <p><strong>{errors.tel.message}</strong></p>}
             </span>
             <span>
                 <p>Dirección</p>
                 <input 
                     placeholder="Dirección" 
                     type="text" 
-                    {...register("dir", { required: true })} 
+                    {...register("dir", { required: {
+                        value: true,
+                        message: "Este campo es requerido"
+                    } })} 
                 />
                 {errors.dir && <p>Este campo es requerido</p>}
             </span>
             <span>
                 <p>Tipo de Usuario</p>
                 <select 
-                    {...register("tipUser", { required: true })}
+                    {...register("tipUser", { required:{
+                        value: true,
+                        message: "Este campo es requerido"
+                    } })}
                 >
                     <option value="1">Propietario</option>
                     <option value="2">Veterinario</option>
