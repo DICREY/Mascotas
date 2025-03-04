@@ -1,15 +1,9 @@
 Dep Client {
-    axios
-    react
-    react-dom
-    react-scripts
-    sweetalert2
+    axios react react-dom sweetalert2 react-hook-form
     Dev Dep {
         vite
     }
 }
 Dep Server {
-    cors
-    express
-    mysql
+    cors express mysql
 }
